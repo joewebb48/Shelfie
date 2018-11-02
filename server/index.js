@@ -14,6 +14,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 });
 
 app.get("/api/inventory", cj.getInventory);
+app.get("/api/product", cj.getProduct);
+app.delete("/api/product.:id", cj.deleteProduct);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
